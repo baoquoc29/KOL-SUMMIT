@@ -46,7 +46,12 @@ export default function Schedule() {
   const btnShadow = '0px 0px 23.3px rgba(241, 51, 255, 0.84), inset 0px -3px 4px rgba(255, 255, 255, 0.51)';
 
   return (
-    <section id="schedule" className="relative flex flex-col items-center py-[100px] overflow-hidden w-full font-['SVN-Apparat']">
+    <section id="schedule" className="relative flex flex-col items-center py-[100px] overflow-hidden w-full bg-[#07080C] font-['SVN-Apparat']">
+      {/* Ambient Glow Backgrounds analyzed from image */}
+      <div className="absolute -left-24 top-1/4 w-[520px] h-[520px] bg-[#3D8B7A]/35 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute -right-24 bottom-10 w-[580px] h-[580px] bg-[#5D1B99]/45 rounded-full blur-[150px] pointer-events-none z-0" />
+      <div className="absolute right-0 top-0 w-[360px] h-[360px] bg-[#4C1D95]/25 rounded-full blur-[130px] pointer-events-none z-0" />
+
       {/* Floating Animation Styles */}
       <style>
         {`
