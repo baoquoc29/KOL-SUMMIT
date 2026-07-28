@@ -1,86 +1,90 @@
-import { Phone, AtSign, MapPin, User } from 'lucide-react';
-import { menuItems } from '../data/landingData';
-import ImagePlaceholder from './ImagePlaceholder';
+import { Phone, AtSign, MapPin, Facebook } from 'lucide-react';
 
 export default function Footer() {
-  const handleNavClick = (href) => {
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <footer className="relative overflow-hidden">
-      {/* Gradient top border */}
-      <div className="h-px bg-gradient-to-r from-transparent via-neon-purple to-transparent" />
+    <footer 
+      className="w-full flex justify-center overflow-hidden mt-10"
+      style={{
+        background: 'linear-gradient(281.64deg, #D2DED5 -78.77%, #4CA67C -50.71%, #076531 -22.65%, #00121F 5.41%, #110B3C 15.89%, #2D006C 33.47%, #2840DB 61.53%, rgba(214, 94, 238, 0.5) 89.59%, #96DFFF 117.65%), #3E00CE'
+      }}
+    >
+      <div className="relative w-full max-w-[1280px] mx-auto min-h-[320px] flex flex-col lg:block overflow-hidden py-10 lg:py-0 px-4 lg:px-0">
+        
+        {/* Left Image (kol-section.png) - 40% width */}
+        <img 
+          src="/images/kol-section.png" 
+          alt="KOL Section" 
+          className="hidden lg:block absolute left-0 top-0 h-full w-[40%] object-cover" 
+        />
 
-      <div className="bg-gradient-to-b from-navy-900 via-navy-950 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-            {/* Logo & title */}
-            <div className="space-y-4">
-              <ImagePlaceholder label="Logo KOL Summit" className="w-40 h-12 !rounded-lg mb-4" />
-              <h3 className="font-display text-lg md:text-xl font-extrabold uppercase">
-                <span className="bg-gradient-to-r from-neon-purple to-cyan-400 bg-clip-text text-transparent">
-                  Thông tin liên hệ
-                </span>
-              </h3>
-              <p className="text-sm text-white/60 font-medium">
-                Ban Thư ký Liên minh Niềm tin Số
+        {/* Mobile Flex Layout (Hidden on Desktop) */}
+        <div className="lg:hidden flex flex-col items-center justify-center text-white space-y-6 w-full">
+          <h2 className="font-bold text-[28px] sm:text-[32px] uppercase text-center leading-tight" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>
+            Thông tin liên hệ
+          </h2>
+          <p className="font-[450] text-[20px] text-center" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>
+            Ban Thư ký Liên minh Niềm tin Số
+          </p>
+
+          <div className="flex flex-col items-start gap-4">
+            <div className="flex items-center gap-4">
+              <Phone className="w-5 h-5 text-white" />
+              <p className="text-[16px] m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>0918218825</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <AtSign className="w-5 h-5 text-white" />
+              <p className="text-[16px] m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>@niemtinso</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <Facebook className="w-5 h-5 text-white" />
+              <p className="text-[16px] m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>Niềm tin Số</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <MapPin className="w-6 h-6 text-white flex-shrink-0" />
+              <p className="text-[16px] m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif" }}>
+                Lô E2 Phố Dương Đình Nghệ, Yên Hòa, Cầu Giấy, Hà Nội
               </p>
-            </div>
-
-            {/* Contact info */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span className="text-sm text-white/70">0918218825</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <AtSign className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span className="text-sm text-white/70">@niemtinso</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <User className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span className="text-sm text-white/70">Niềm tin Số</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-white/70 leading-relaxed">
-                  Lô E2, Phố Dương Đình Nghệ, Yên Hòa, Cầu Giấy, Hà Nội
-                </span>
-              </div>
-            </div>
-
-            {/* Quick nav */}
-            <div>
-              <h4 className="text-sm font-bold text-white/80 uppercase tracking-wider mb-4">
-                Menu nhanh
-              </h4>
-              <nav className="grid grid-cols-2 gap-2">
-                {menuItems.map((item) => (
-                  <button
-                    key={item.href}
-                    type="button"
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-sm text-white/50 hover:text-cyan-400 text-left transition-colors cursor-pointer py-1"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </nav>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-5">
-            <p className="text-center text-xs text-white/30">
-              © 2026 KOL Summit. All rights reserved.
-            </p>
-          </div>
+        {/* Desktop Absolute Layout (Hidden on Mobile) */}
+        <div className="hidden lg:block absolute inset-0" style={{ transform: 'translateY(-47px)' }}>
+          {/* Headers */}
+          <h2 
+            className="absolute font-bold text-[36px] leading-[1.2] uppercase text-white text-left m-0"
+            style={{ fontFamily: "'SVN-Apparat', sans-serif", width: '451px', height: '58px', left: '619px', top: '65.34px' }}
+          >
+            Thông tin liên hệ
+          </h2>
+
+          <p 
+            className="absolute font-[450] text-[24px] leading-[1.2] text-white text-left m-0"
+            style={{ fontFamily: "'SVN-Apparat', sans-serif", width: '482px', height: '38px', left: '619px', top: '148.34px' }}
+          >
+            Ban Thư ký Liên minh Niềm tin Số
+          </p>
+
+          {/* Contact Info Items */}
+          <Phone className="absolute w-[20px] h-[20px] text-white" style={{ left: '643px', top: '203.34px' }} />
+          <p className="absolute font-[450] text-[16px] leading-[1.2] text-white m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif", left: '673px', top: '199.07px' }}>
+            0918218825
+          </p>
+
+          <AtSign className="absolute w-[20px] h-[20px] text-white" style={{ left: '643px', top: '238.34px' }} />
+          <p className="absolute font-[450] text-[16px] leading-[1.2] text-white m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif", left: '673px', top: '236.34px' }}>
+            @niemtinso
+          </p>
+
+          <Facebook className="absolute w-[20px] h-[20px] text-white" style={{ left: '643px', top: '273.34px' }} />
+          <p className="absolute font-[450] text-[16px] leading-[1.2] text-white m-0" style={{ fontFamily: "'SVN-Apparat', sans-serif", left: '673px', top: '273.34px' }}>
+            Niềm tin Số
+          </p>
+
+          <MapPin className="absolute w-[24px] h-[24px] text-white" style={{ left: '641px', top: '310.34px' }} />
+          <p className="absolute font-[450] text-[16px] leading-[1.2] text-white m-0 whitespace-nowrap" style={{ fontFamily: "'SVN-Apparat', sans-serif", left: '673px', top: '310.34px' }}>
+            Lô E2 Phố Dương Đình Nghệ, Yên Hòa, Cầu Giấy, Hà Nội
+          </p>
         </div>
       </div>
     </footer>

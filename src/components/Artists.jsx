@@ -1,25 +1,59 @@
 import { artists } from '../data/landingData';
-import SectionTitle from './SectionTitle';
 import ArtistCard from './ArtistCard';
 
 export default function Artists() {
+  const topArtists = artists.slice(0, 2);
+  const gridArtists = artists.slice(2);
+
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950" />
-      <div className="absolute top-1/3 right-0 w-80 h-80 bg-pink-purple/8 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-neon-purple/8 rounded-full blur-[120px]" />
+    <section className="relative flex w-full flex-col items-center overflow-hidden bg-transparent py-10 lg:py-[60px]">
+      <div className="relative mx-auto flex w-full max-w-[1152px] flex-col gap-10 px-5 lg:gap-[50px] lg:px-0">
+        {/* Removed Glow decoration as requested */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Nghệ sĩ, KOL tham gia" />
+        {/* KOL Section Logo (Group 1410118584) */}
+        <img
+          src="/images/kol-section.png"
+          alt="KOL Section Logo"
+          className="pointer-events-none absolute z-10"
+          style={{
+            width: '213px',
+            height: '159.21px',
+            top: '20px',
+            left: 'calc(50% - 213px/2 - 469.5px)',
+          }}
+        />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
-          {artists.map((artist, index) => (
+        {/* Top Row: Title + 2 Artists */}
+        <div className="relative z-10 flex flex-col items-center gap-7 lg:h-[221px] lg:flex-row lg:justify-start lg:gap-[28px]">
+          <h2 className="w-full text-center text-[40px] font-extrabold uppercase leading-[1.2] text-[#F9F6FF] sm:text-[50px] lg:w-[562px] lg:text-right lg:text-[70px]">
+            Nghệ sĩ, KOL<br />tham gia
+          </h2>
+          {topArtists.map((artist, index) => (
             <ArtistCard
               key={index}
+              index={index}
               name={artist.name}
               role={artist.role}
               gradient={artist.gradient}
               image={artist.image}
+              figmaBackground={artist.figmaBackground}
+              imageStyle={artist.imageStyle}
+            />
+          ))}
+        </div>
+
+        {/* Bottom Grid: Remaining Artists */}
+        <div className="relative z-10 grid w-full grid-cols-1 justify-items-center gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-[27px] lg:gap-y-[28px]">
+          {gridArtists.map((artist, index) => (
+            <ArtistCard
+              key={index + 2}
+              index={index + 2}
+              name={artist.name}
+              role={artist.role}
+              gradient={artist.gradient}
+              image={artist.image}
+              figmaBackground={artist.figmaBackground}
+              imageStyle={artist.imageStyle}
             />
           ))}
         </div>

@@ -11,7 +11,7 @@ import TrustProgram from './components/TrustProgram';
 import Alliance from './components/Alliance';
 import Partners from './components/Partners';
 import News from './components/News';
-import RegistrationCTA from './components/RegistrationCTA';
+
 import Footer from './components/Footer';
 import MarkerSection from './components/MarkerSection';
 
@@ -33,7 +33,6 @@ export default function App() {
         <Alliance />
         <Partners />
         <News />
-        <RegistrationCTA />
       </main>
       <Footer />
     </div>

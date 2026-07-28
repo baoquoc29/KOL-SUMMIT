@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { speakerTabs, speakers } from '../data/landingData';
-import SectionTitle from './SectionTitle';
 import SpeakerCard from './SpeakerCard';
 
 export default function Speakers() {
@@ -9,17 +7,7 @@ export default function Speakers() {
   const [startIndex, setStartIndex] = useState(0);
 
   const currentSpeakers = speakers[activeTab] || [];
-
-  // Responsive: show different count based on window (we use a simple approach)
-  const getVisibleCount = () => {
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth < 640) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  };
-
-  const visibleCount = getVisibleCount();
-  const maxIndex = Math.max(0, currentSpeakers.length - visibleCount);
+  const maxIndex = Math.max(0, currentSpeakers.length - 3);
 
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
@@ -34,88 +22,94 @@ export default function Speakers() {
     setStartIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
-  const visibleSpeakers = currentSpeakers.slice(startIndex, startIndex + visibleCount);
+  const visibleSpeakers = currentSpeakers.slice(startIndex, startIndex + 3);
+
+  const textGradientMain = {
+    background: 'linear-gradient(180deg, #FFFFFF 17.59%, #EFD5FF 85.45%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
+  };
+
+  const activeTabStyle = {
+    background: 'linear-gradient(0deg, #261187, #261187), linear-gradient(180deg, rgba(0, 6, 15, 0) -12.59%, #0C6DFF 118%), #2D0097',
+    backgroundBlendMode: 'hue, normal, normal',
+    border: '1px solid #AFAFAF',
+  };
+  
+  const inactiveTabStyle = {
+    background: 'rgba(255, 255, 255, 0.15)',
+    border: '1px solid #AFAFAF',
+  };
 
   return (
-    <section id="speakers" className="relative py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-900" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-neon-purple/8 rounded-full blur-[120px]" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Diễn giả" />
+    <section id="speakers" className="relative flex flex-col items-center pt-[60px] pb-[140px] overflow-hidden w-full font-['SVN-Apparat']">
+      <div className="flex flex-col items-center gap-[50px] w-full max-w-[1282px] relative z-10">
+        
+        {/* Title */}
+        <h2 
+          className="text-[64px] font-bold text-center uppercase tracking-[-0.06em] leading-[1.2] py-4 px-2"
+          style={textGradientMain}
+        >
+          Diễn giả
+        </h2>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-14">
+        <div className="flex flex-row items-center justify-center gap-[20px] w-full max-w-[752px]">
           {speakerTabs.map((tab) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => handleTabChange(tab.id)}
-              className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 cursor-pointer ${
-                activeTab === tab.id
-                  ? 'bg-gradient-to-r from-neon-purple to-electric-blue text-white shadow-[0_0_20px_rgba(168,85,247,0.3)]'
-                  : 'border border-white/20 text-white/60 hover:text-white hover:border-white/40 hover:bg-white/5'
-              }`}
+              className="flex flex-row justify-center items-center h-[65px] px-[30px] rounded-[40px] transition-all duration-300 hover:scale-105"
+              style={activeTab === tab.id ? activeTabStyle : inactiveTabStyle}
             >
-              {tab.label}
+              <span className={`text-[22px] text-center whitespace-nowrap text-[#E1D6FF] ${activeTab === tab.id ? 'font-bold' : 'font-[450]'}`}>
+                {tab.label}
+              </span>
             </button>
           ))}
         </div>
 
-        {/* Carousel */}
-        <div className="relative">
-          {/* Navigation arrows */}
-          <button
-            type="button"
+        {/* Cards Grid & Navigation */}
+        <div className="flex flex-row items-center justify-center gap-[63px] w-full mt-4">
+          
+          {/* Left Arrow (Polygon 2) */}
+          <button 
             onClick={handlePrev}
             disabled={startIndex === 0}
-            aria-label="Diễn giả trước"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-navy-800/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-neon-purple/50 hover:bg-navy-700/80 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+            className="w-[34px] h-[78px] flex items-center justify-center disabled:opacity-30 cursor-pointer hover:-translate-x-2 transition-transform"
           >
-            <ChevronLeft size={20} />
-          </button>
-
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={startIndex >= maxIndex}
-            aria-label="Diễn giả tiếp theo"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-navy-800/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:border-neon-purple/50 hover:bg-navy-700/80 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-          >
-            <ChevronRight size={20} />
+            <svg width="34" height="78" viewBox="0 0 34 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 2L4 39L32 76" stroke="#D2DED5" strokeWidth="4" strokeLinecap="square"/>
+            </svg>
           </button>
 
           {/* Cards */}
-          <div className="mx-8 md:mx-16">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {visibleSpeakers.map((speaker, index) => (
-                <SpeakerCard
-                  key={`${activeTab}-${startIndex}-${index}`}
-                  name={speaker.name}
-                  position={speaker.position}
-                  org={speaker.org}
-                  image={speaker.image}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Dots indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setStartIndex(i)}
-                aria-label={`Trang ${i + 1}`}
-                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                  i === startIndex
-                    ? 'w-6 bg-gradient-to-r from-neon-purple to-cyan-400'
-                    : 'bg-white/20 hover:bg-white/40'
-                }`}
+          <div className="flex flex-row flex-wrap justify-center gap-[52px]">
+            {visibleSpeakers.map((speaker, index) => (
+              <SpeakerCard
+                key={`${activeTab}-${startIndex}-${index}`}
+                name={speaker.name}
+                position={speaker.position}
+                org={speaker.org}
+                image={speaker.image}
               />
             ))}
           </div>
+
+          {/* Right Arrow (Polygon 1) */}
+          <button 
+            onClick={handleNext}
+            disabled={startIndex >= maxIndex}
+            className="w-[34px] h-[78px] flex items-center justify-center disabled:opacity-30 cursor-pointer hover:translate-x-2 transition-transform"
+          >
+            <svg width="34" height="78" viewBox="0 0 34 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2L30 39L2 76" stroke="#D2DED5" strokeWidth="4" strokeLinecap="square"/>
+            </svg>
+          </button>
+
         </div>
       </div>
     </section>

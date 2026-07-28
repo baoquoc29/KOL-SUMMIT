@@ -14,14 +14,12 @@ export default function MarkerSection() {
 
                 {/* Content */}
                 <div className="relative z-10 flex min-h-[135px] w-full flex-col items-center justify-center px-5 py-5 text-center sm:min-h-[150px] sm:px-10 md:min-h-[170px]">
-                    <h2 className="font-display text-[28px] font-extrabold uppercase leading-none tracking-[-0.04em] text-white drop-shadow-lg sm:text-4xl md:text-[42px] lg:text-[46px]">
+                    <h2 className="font-display text-[28px] font-bold uppercase leading-none text-[#F9F6FF] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] sm:text-4xl lg:text-[40px]">
                         KOL SUMMIT 2026
                     </h2>
 
-                    <p className="mt-2 max-w-[1100px] text-base font-normal leading-[1.4] text-white drop-shadow-md sm:text-lg md:text-xl lg:text-[24px]">
-                        Diễn đàn quốc gia quy tụ toàn hệ sinh thái ảnh hưởng số nhằm cùng
-                        <br className="hidden md:block" />
-                        định hình và thúc đẩy các định hướng phát triển trong kỷ nguyên AI.
+                    <p className="mt-3 max-w-[1004px] text-base font-medium leading-[1.25] text-white drop-shadow-[0_0_5.2px_rgba(0,0,0,0.45)] sm:text-lg md:text-xl lg:text-[32px]">
+                        Diễn đàn quốc gia quy tụ toàn hệ sinh thái ảnh hưởng số nhằm cùng định hình và thúc đẩy các định hướng phát triển trong kỷ nguyên AI.
                     </p>
                 </div>
             </div>

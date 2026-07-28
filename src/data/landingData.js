@@ -45,20 +45,34 @@ export const attendeeGroups = [
 ];
 
 export const artists = [
-  { name: 'NSND – Tự Long', role: 'NSND', gradient: 'from-purple-600 to-blue-600', image: 'https://lh3.googleusercontent.com/d/1V2FLpVvwgYSQfBhGPKhDdkHlvmkZRffU' },
-  { name: 'Ca sĩ – Soobin', role: 'Ca sĩ', gradient: 'from-blue-600 to-cyan-500', image: 'https://lh3.googleusercontent.com/d/1frRSOMxCHi_aCYekouZ8iZ8PfLBEotLK' },
-  { name: 'Ca sĩ – Hà Anh Tuấn', role: 'Ca sĩ', gradient: 'from-cyan-500 to-teal-500', image: 'https://lh3.googleusercontent.com/d/1CwenLQmC8IbLdJNlPH7eBlZa-eJYQVZg' },
-  { name: 'Ca sĩ – Hồ Ngọc Hà', role: 'Ca sĩ', gradient: 'from-purple-500 to-pink-500', image: 'https://lh3.googleusercontent.com/d/1e-q1cx4eFEkxvB5JjcjTfI5X2eXWm-gR' },
-  { name: 'MC – Khánh Vy', role: 'MC', gradient: 'from-fuchsia-600 to-purple-600', image: 'https://lh3.googleusercontent.com/d/1aZsE1SQ-BgO8RWmkKCWcf11VJukF2jli' },
-  { name: 'Ca sĩ – Hòa Minzy', role: 'Ca sĩ', gradient: 'from-blue-500 to-indigo-600', image: 'https://lh3.googleusercontent.com/d/1MCAWwc0HkEbWLioxSIchkoG256ZoF1lR' },
-  { name: 'Ca sĩ – Mỹ Tâm', role: 'Ca sĩ', gradient: 'from-violet-600 to-purple-500', image: 'https://lh3.googleusercontent.com/d/1cXJcPWuBCKuz-fVKnt9p1l3FfH5QTu_C' },
-  { name: 'Ca sĩ, diễn viên – Chi Pu', role: 'Ca sĩ, diễn viên', gradient: 'from-pink-500 to-rose-500', image: 'https://lh3.googleusercontent.com/d/1omSuO9jSdwv1U2Gq7dhF1q0RpUFBOWHE' },
-  { name: 'Nhạc sĩ, ca sĩ – Bùi Công Nam', role: 'Nhạc sĩ, ca sĩ', gradient: 'from-indigo-600 to-blue-500', image: 'https://lh3.googleusercontent.com/d/11z2CBzsV3XTPbPLfqZAcrAJX_g89dd5S' },
-  { name: 'Fashionista – Châu Bùi', role: 'Fashionista', gradient: 'from-emerald-500 to-cyan-500', image: 'https://lh3.googleusercontent.com/d/1pmYgZpUtQ_F4yMMFYVZJd8EtaR_Wd9CP' },
-  { name: 'KOL gia đình – Placeholder tên KOL', role: 'KOL gia đình', gradient: 'from-purple-600 to-violet-500', image: 'https://lh3.googleusercontent.com/d/1rxS2EHcBPmYSOlY_2fwAph1zhMQ_NS_L' },
-  { name: 'YouTuber truyền hình – Khoai Lang Thang', role: 'YouTuber truyền hình', gradient: 'from-amber-500 to-orange-500', image: 'https://lh3.googleusercontent.com/d/1i4k_AkpzW53xHCTIaNq0J1nnY7d0EiYe' },
-  { name: 'Nhạc sĩ, ca sĩ – Phan Mạnh Quỳnh', role: 'Nhạc sĩ, ca sĩ', gradient: 'from-blue-600 to-purple-600', image: 'https://lh3.googleusercontent.com/d/1RLpppgvvaqHk6MuQtYMQjv6iM7YIFpQj' },
-  { name: 'Rapper – Đen Vâu', role: 'Rapper', gradient: 'from-gray-700 to-gray-900', image: 'https://lh3.googleusercontent.com/d/1PLo_ypdDlJlSjWwHUHd9YNFvQkiLXh4b' },
+  { 
+    name: 'NSND – Tự Long', 
+    role: 'NSND', 
+    gradient: 'from-purple-600 to-blue-600', 
+    image: 'https://lh3.googleusercontent.com/d/1V2FLpVvwgYSQfBhGPKhDdkHlvmkZRffU',
+    figmaBackground: 'linear-gradient(0deg, #D2DED5 -52.22%, #4CA67C -23.11%, #076531 6%, #00121F 52.75%, #2D006C 64.21%, #2840DB 93.31%, #D65EEE 122.42%, #96DFFF 151.52%), #3E00CE',
+    imageStyle: { width: '233px', height: '243px', x: -7, y: 0, scale: 1 }
+  },
+  { 
+    name: 'Ca sĩ – Soobin', 
+    role: 'Ca sĩ', 
+    gradient: 'from-blue-600 to-cyan-500', 
+    image: 'https://lh3.googleusercontent.com/d/1frRSOMxCHi_aCYekouZ8iZ8PfLBEotLK',
+    figmaBackground: 'linear-gradient(0deg, #D2DED5 -183.01%, #4CA67C -135.23%, #076531 -87.45%, #00121F -10.71%, #2D006C 8.1%, #2840DB 55.87%, #D65EEE 103.65%, #96DFFF 151.42%), #3E00CE',
+    imageStyle: { width: '261px', height: '235px', x: 0, y: 0, scale: 1 }
+  },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
 ];
 
 export const scheduleData = [
@@ -110,28 +124,28 @@ export const speakerTabs = [
 
 export const speakers = {
   tab1: [
-    { name: 'Ông NGUYỄN VĂN A', position: 'Trưởng phòng Marketing', org: 'Công ty TNHH Truyền thông Số', image: 'https://lh3.googleusercontent.com/d/12UVL6NsmjsfZiTcJRUj2RXqTzOM0UJlh' },
-    { name: 'Bà TRẦN THỊ B', position: 'Giám đốc Chiến lược', org: 'Tập đoàn Công nghệ ABC', image: 'https://lh3.googleusercontent.com/d/1TRYF5n9dt_9fU_MOfCWtSfPRz3DZxf3x' },
-    { name: 'Ông LÊ VĂN C', position: 'Phó Giám đốc', org: 'Trung tâm Nghiên cứu AI', image: 'https://lh3.googleusercontent.com/d/1Xk2jdVl2CBCOCc69OJUWD80E3Mm_SH2l' },
-    { name: 'Bà PHẠM THỊ D', position: 'Chuyên gia Truyền thông', org: 'Đại học Quốc gia Hà Nội', image: 'https://lh3.googleusercontent.com/d/1mGKZVpbeTAQF_ZwprsUVmRWX_SS8c-4-' },
-    { name: 'Ông HOÀNG VĂN E', position: 'Giám đốc Sáng tạo', org: 'Công ty CP Nội dung Số', image: 'https://lh3.googleusercontent.com/d/1taSULXD7whuiIKdBAIOV0HsB3nOpJmgb' },
-    { name: 'Bà VŨ THỊ F', position: 'Trưởng ban Pháp luật', org: 'Hiệp hội Truyền thông Số', image: 'https://lh3.googleusercontent.com/d/1YXmXy5deR0d6IKAn6eQ9Ioj3uEGRwXm4' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
   ],
   tab2: [
-    { name: 'Ông NGUYỄN MINH G', position: 'Chủ tịch HĐQT', org: 'Liên minh Niềm tin Số', image: 'https://lh3.googleusercontent.com/d/1QKg1Jcf_BinsC_ZxtTGF62UebmWvpZRx' },
-    { name: 'Bà ĐẶNG THỊ H', position: 'Thứ trưởng', org: 'Bộ Thông tin và Truyền thông', image: 'https://lh3.googleusercontent.com/d/1Kb8vJJeIHOYR0kfGwItmIuxoGQ0VDZ-v' },
-    { name: 'Ông TRẦN ĐỨC I', position: 'Tổng Giám đốc', org: 'Nền tảng Mạng xã hội XYZ', image: 'https://lh3.googleusercontent.com/d/1BsRnATPbjHc8UpszTjU6wHryJ0lf3FHD' },
-    { name: 'Bà LÝ THỊ K', position: 'Giám đốc Quốc gia', org: 'Tổ chức Quốc tế về An toàn Mạng', image: 'https://lh3.googleusercontent.com/d/1ThNF2_Nw-okZomTTnw7Gu7yv8L2EMvDa' },
-    { name: 'Ông PHAN VĂN L', position: 'Phó Viện trưởng', org: 'Viện Nghiên cứu Truyền thông', image: 'https://lh3.googleusercontent.com/d/1k0ND-ddQFvJ4GB7sNxyU-ffkgjLYdwOj' },
-    { name: 'Bà MAI THỊ M', position: 'Giám đốc Truyền thông', org: 'Công ty TNHH Quảng cáo Số', image: 'https://lh3.googleusercontent.com/d/1oLXgIm6xA3lkWess_elZZ7eLYRwWe4PO' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
   ],
   tab3: [
-    { name: 'Ông NGUYỄN TUẤN N', position: 'Chuyên gia AI', org: 'Viện Công nghệ Thông tin', image: 'https://lh3.googleusercontent.com/d/1hRoYGDPDTHj9R2LH5RJNi2kN0yp7DJcC' },
-    { name: 'Bà TRỊNH THỊ O', position: 'Giám đốc Nội dung', org: 'Mạng lưới MCN Việt Nam', image: 'https://lh3.googleusercontent.com/d/1RanQzhtDxkpazWO9FcNsCmYYpD8QVPDI' },
-    { name: 'Ông ĐỖ VĂN P', position: 'Nhà sáng lập', org: 'Startup Bảo vệ Bản quyền Số', image: 'https://lh3.googleusercontent.com/d/15FkLZvxNQfhFeD1iVhL0FY5h9VPUnQC8' },
-    { name: 'Bà HỒ THỊ Q', position: 'Trưởng phòng Đào tạo', org: 'Học viện Marketing Số', image: 'https://lh3.googleusercontent.com/d/1VLJBrknXhFOwybiHvB2DOt2OkKc2x9RE' },
-    { name: 'Ông BÙI MINH R', position: 'Phó Giám đốc', org: 'Trung tâm An ninh Mạng Quốc gia', image: 'https://lh3.googleusercontent.com/d/12UVL6NsmjsfZiTcJRUj2RXqTzOM0UJlh' },
-    { name: 'Bà NGỌC THỊ S', position: 'Giám đốc Vận hành', org: 'Nền tảng Thương mại Điện tử', image: 'https://lh3.googleusercontent.com/d/1TRYF5n9dt_9fU_MOfCWtSfPRz3DZxf3x' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
+    { name: '', position: '', org: '', image: '' },
   ],
 };
 

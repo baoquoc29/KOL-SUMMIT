@@ -32,39 +32,36 @@ const attendeeGroups = [
 
 function MainStatCard({ value, label }) {
   return (
-    <div className="relative min-h-[84px] overflow-hidden rounded-[13px] border border-cyan-200/55 bg-gradient-to-r from-[#583aff] via-[#230399] to-[#090047] shadow-[0_0_8px_rgba(123,217,255,0.9),0_0_24px_rgba(102,54,255,0.45)]">
-      {/* Highlight phía trên */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/25 to-transparent" />
-
-      {/* Glow tím */}
-      <div className="pointer-events-none absolute -bottom-10 left-5 h-24 w-36 rounded-full bg-violet-500/35 blur-[35px]" />
-
-      {/* Glow xanh */}
-      <div className="pointer-events-none absolute -right-10 top-1/2 h-24 w-24 -translate-y-1/2 rounded-full bg-cyan-300/20 blur-[30px]" />
-
-      <div className="relative z-10 flex min-h-[84px] items-center gap-4 px-4 py-3 sm:px-5">
-        <div className="shrink-0 font-display-wide text-[43px] font-black leading-none tracking-[-0.06em] text-white drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] sm:text-[47px] lg:text-[50px]">
-          {value}
-        </div>
-
-        <p className="max-w-[230px] text-left text-[13px] font-medium leading-[1.25] text-white sm:text-sm">
-          {label}
-        </p>
+    <div
+      className="relative flex h-auto w-full flex-col items-center gap-5 overflow-hidden rounded-[17px] px-5 py-[22px] md:h-[121px] md:flex-row lg:w-[566px]"
+      style={{
+        background: 'linear-gradient(313.88deg, #D2DED5 -87.24%, #4CA67C -38.17%, #076531 -19.67%, #00121F 2.93%, #2D006C 26.01%, #2840DB 55.41%, #D65EEE 84.82%, #96DFFF 114.22%), #3E00CE',
+        boxShadow: '0px 0px 6.73631px #5EB1FF, inset 0px 0px 26.1115px #C7C4FF',
+        backdropFilter: 'blur(27.3495px)',
+      }}
+    >
+      <div className="shrink-0 min-w-[156px] text-[48px] font-bold leading-[1.2] text-white md:text-center md:text-[64px]">
+        {value}
       </div>
+
+      <p className="flex-1 text-center text-lg font-medium leading-[1.2] text-white md:text-left md:text-[22px]">
+        {label}
+      </p>
     </div>
   );
 }
 
 function AttendeeGroupCard({ children }) {
   return (
-    <div className="relative flex min-h-[61px] items-center justify-center overflow-hidden rounded-[11px] border border-cyan-200/60 bg-gradient-to-b from-[#ead5ff] via-[#e7c9ff] to-[#be78ef] px-5 py-3 text-center shadow-[0_0_7px_rgba(120,218,255,0.8),0_0_18px_rgba(158,91,255,0.3)]">
-      {/* Ánh sáng phía trên */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/45 to-transparent" />
-
-      {/* Glow tím dưới */}
-      <div className="pointer-events-none absolute -bottom-8 left-1/2 h-16 w-40 -translate-x-1/2 rounded-full bg-violet-500/30 blur-[24px]" />
-
-      <p className="relative z-10 text-[13px] font-medium leading-[1.25] text-black sm:text-sm">
+    <div
+      className="relative flex h-auto min-h-[87px] w-full items-center justify-center overflow-hidden rounded-[17px] px-5 py-4 text-center lg:w-[505px]"
+      style={{
+        background: 'linear-gradient(184.05deg, rgba(232, 223, 248, 0) 83.76%, rgba(170, 118, 234, 0.4) 120.64%, rgba(144, 101, 214, 0.7) 155.28%, #6B57A6 188.8%, #39504B 226.79%), radial-gradient(88.41% 116.31% at 46.39% 20.86%, #F1F1F1 27%, #E7B7F8 56%, #9F42E1 80.5%, #5A1798 100%), #FFFFFF',
+        boxShadow: '0px 0px 6.73631px #5EB1FF, inset 0px 0px 26.1115px #C7C4FF',
+        backdropFilter: 'blur(27.3495px)',
+      }}
+    >
+      <p className="relative z-10 w-full text-base font-medium leading-[1.2] text-black md:text-[22px]">
         {children}
       </p>
     </div>
@@ -75,7 +72,7 @@ export default function Attendees() {
   return (
     <section
       id="attendees"
-      className="relative m-0 w-full overflow-hidden bg-[#09090c] px-5 py-14 sm:px-8 md:py-16 lg:py-20"
+      className="relative m-0 w-full overflow-hidden bg-[#09090c]"
     >
       {/* Nền chính */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#09090c] via-[#09090c] to-[#091615]" />
@@ -89,40 +86,40 @@ export default function Attendees() {
       {/* Glow xanh góc dưới phải */}
       <div className="pointer-events-none absolute -bottom-52 -right-32 h-[480px] w-[480px] rounded-full bg-cyan-300/45 blur-[145px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[820px]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1152px] flex-col items-center gap-[58px] px-5 py-14 lg:py-[60px]">
         {/* Tiêu đề */}
-        <h2 className="text-center font-display-wide text-[30px] font-extrabold uppercase leading-tight tracking-[-0.035em] text-white sm:text-4xl md:text-[40px] lg:text-[42px]">
+        <h2 className="text-center text-[32px] font-bold uppercase leading-none text-[#F9F6FF] sm:text-4xl md:text-[48px] lg:text-[64px]">
           Thành phần tham dự
         </h2>
 
-        {/* Hai ô thống kê */}
-        <div className="mt-9 grid grid-cols-1 gap-4 sm:mt-10 md:grid-cols-2 md:gap-4">
-          {attendeeStats.map((stat) => (
-            <MainStatCard
-              key={stat.value}
-              value={stat.value}
-              label={stat.label}
-            />
-          ))}
-        </div>
+        <div className="flex w-full max-w-[1088px] flex-col items-center gap-[30px]">
+          {/* Hai ô thống kê */}
+          <div className="flex w-full flex-col items-center justify-center gap-5 lg:flex-row lg:gap-[20px]">
+            {attendeeStats.map((stat) => (
+              <MainStatCard
+                key={stat.value}
+                value={stat.value}
+                label={stat.label}
+              />
+            ))}
+          </div>
 
-        {/* Các nhóm tham dự */}
-        <div className="mx-auto mt-5 grid w-full max-w-[704px] grid-cols-1 gap-3 md:grid-cols-2 md:gap-x-4 md:gap-y-3">
-          {attendeeGroups.map((group, index) => (
-            <AttendeeGroupCard key={index}>
-              {group.title}
-            </AttendeeGroupCard>
-          ))}
+          {/* Các nhóm tham dự */}
+          <div className="grid w-full max-w-[1030px] grid-cols-1 justify-items-center gap-[20px] lg:grid-cols-2">
+            {attendeeGroups.map((group, index) => (
+              <AttendeeGroupCard key={index}>
+                {group.title}
+              </AttendeeGroupCard>
+            ))}
+          </div>
         </div>
 
         {/* Thông điệp cuối */}
-        <div className="mx-auto mt-9 max-w-[670px] text-center md:mt-10">
-          <p className="text-[14px] font-normal leading-[1.45] text-white/95 sm:text-[15px] md:text-base">
+        <div className="w-full max-w-[912px] text-center">
+          <p className="text-lg font-medium leading-[1.2] text-[#F9F6FF] md:text-[24px]">
             Khẳng định vai trò của người có ảnh hưởng như một chủ thể quan
-            trọng, đồng hành
-            <br className="hidden md:block" />
-            cùng Nhà nước, doanh nghiệp và xã hội trong việc kiến tạo niềm tin
-            số!
+            trọng, đồng hành cùng Nhà nước, doanh nghiệp và xã hội trong việc
+            kiến tạo niềm tin số!
           </p>
         </div>
       </div>

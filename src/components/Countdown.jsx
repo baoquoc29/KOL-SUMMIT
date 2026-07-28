@@ -35,27 +35,22 @@ function CountdownCard({ value, label }) {
   return (
     <div
       className="
-        relative flex min-h-[124px] w-full flex-col
+        relative flex aspect-[234/181] w-full max-w-[234px] flex-col
         items-center justify-center overflow-hidden
-        rounded-[14px] border border-violet-500/30
-        bg-gradient-to-br
-        from-[#17049b]
-        via-[#2103a3]
-        to-[#5424f5]
-        px-4 py-5
-        shadow-[0_0_25px_rgba(78,32,255,0.16)]
-        sm:min-h-[130px]
-        md:min-h-[124px]
+        rounded-[20px] border border-[#383838]
+        mx-auto md:h-[181px]
       "
+      style={{
+        background:
+          'linear-gradient(0deg, #261187, #261187), url(/image.png), linear-gradient(180deg, rgba(0, 6, 15, 0) -12.59%, #0C6DFF 118%), #2D0097',
+        backgroundBlendMode: 'hue, soft-light, normal, normal',
+      }}
     >
-      {/* Ánh sáng trong card */}
-      <div className="pointer-events-none absolute -bottom-16 -right-12 h-32 w-32 rounded-full bg-violet-400/35 blur-[45px]" />
-
-      <div className="relative z-10 font-display-wide text-[48px] font-extrabold leading-none tracking-[-0.04em] text-white tabular-nums sm:text-[52px] md:text-[54px]">
+      <div className="relative z-10 text-[56px] font-semibold leading-[1.2] tracking-[-0.005em] text-white tabular-nums md:text-[80px] md:leading-[1.1]">
         {String(value).padStart(2, '0')}
       </div>
 
-      <p className="relative z-10 mt-3 text-[18px] font-medium uppercase leading-none text-white sm:text-[19px]">
+      <p className="relative z-10 text-[20px] font-medium uppercase leading-[1.2] tracking-[-0.005em] text-white md:text-[32px] md:leading-[1.1]">
         {label}
       </p>
     </div>
@@ -93,7 +88,7 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="relative m-0 w-full overflow-hidden bg-[#09090c] px-5 py-16 sm:px-8 md:py-20">
+    <section className="relative m-0 w-full overflow-hidden bg-[#09090c]">
       {/* Nền gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#07152c] via-[#09090c] to-[#17081b]" />
 
@@ -103,12 +98,12 @@ export default function Countdown() {
       {/* Ánh xanh bên trái */}
       <div className="pointer-events-none absolute -left-48 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full bg-blue-700/15 blur-[130px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[980px] text-center">
-        <h2 className="font-display-wide text-[30px] font-extrabold uppercase leading-tight tracking-[-0.025em] text-white sm:text-4xl md:text-[40px] lg:text-[42px]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center gap-[30px] px-5 pt-[60px] pb-[40px] lg:pt-[100px] lg:pb-[70px]">
+        <h2 className="bg-gradient-to-b from-[#FFFFFF] to-[#EFD5FF] bg-clip-text text-center text-[32px] font-bold uppercase leading-[1.45] text-transparent sm:text-4xl md:text-[48px] lg:text-[60px]">
           Sự kiện đang đến rất gần!
         </h2>
 
-        <div className="mx-auto mt-8 grid w-full max-w-[730px] grid-cols-2 gap-4 sm:mt-9 sm:gap-5 md:grid-cols-4 md:gap-7">
+        <div className="mx-auto grid w-full max-w-[1065px] grid-cols-2 gap-4 md:grid-cols-4 lg:gap-[43px]">
           {countdownItems.map((item) => (
             <CountdownCard
               key={item.label}
