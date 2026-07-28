@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ===== SVN-Apparat — Body / Text font ===== */
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-LIGHT.OTF') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-REGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-BOOK.OTF') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-MEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-BOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-HEAVY.OTF') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SVN-Apparat';
+  src: url('/fonts/SVN-Apparat/SVN-APPARAT-BLACK.OTF') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Media Sans — Headings / Display font ===== */
+@font-face {
+  font-family: 'Media Sans';
+  src: url('/fonts/MediaSans/mediasans-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans';
+  src: url('/fonts/MediaSans/mediasans-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans';
+  src: url('/fonts/MediaSans/mediasans-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans';
+  src: url('/fonts/MediaSans/mediasans-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans';
+  src: url('/fonts/MediaSans/mediasans-ultra.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Media Sans Extended — Wide headings ===== */
+@font-face {
+  font-family: 'Media Sans Extended';
+  src: url('/fonts/MediaSans/mediasansextended-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans Extended';
+  src: url('/fonts/MediaSans/mediasansextended-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Media Sans Extended';
+  src: url('/fonts/MediaSans/mediasansextended-ultra.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-navy-950: #030712;
+  --color-navy-900: #0a0f1e;
+  --color-navy-800: #111833;
+  --color-navy-700: #1a2347;
+  --color-neon-purple: #a855f7;
+  --color-neon-purple-dark: #7c3aed;
+  --color-electric-blue: #3b82f6;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-pink-purple: #d946ef;
+  --color-glow-purple: rgba(168, 85, 247, 0.3);
+  --color-glow-cyan: rgba(34, 211, 238, 0.2);
+  --color-glow-blue: rgba(59, 130, 246, 0.2);
+
+  --font-sans: 'SVN-Apparat', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'SVN-Apparat', ui-sans-serif, system-ui, sans-serif;
+  --font-display-wide: 'SVN-Apparat', ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-count-up: count-up 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes count-up {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'SVN-Apparat', ui-sans-serif, system-ui, sans-serif;
+  background-color: #030712;
+  color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1e;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a855f7, #06b6d4);
+  border-radius: 4px;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #111833, #1a2347);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #22d3ee);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Neon glow shadow */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15), 0 0 40px rgba(34, 211, 238, 0.08);
+}
+
+.neon-glow-strong {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3), 0 0 60px rgba(34, 211, 238, 0.15);
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(17, 24, 51, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 16px;
+}
+
+/* Timeline */
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7, #22d3ee);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.5), 0 0 24px rgba(34, 211, 238, 0.3);
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  background: linear-gradient(to bottom, #a855f7, #22d3ee, transparent);
+  flex-shrink: 0;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+/* Geometric background patterns */
+.geo-grid {
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.diagonal-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(168, 85, 247, 0.03) 40px,
+    rgba(168, 85, 247, 0.03) 41px
+  );
+}
