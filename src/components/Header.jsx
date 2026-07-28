@@ -5,6 +5,7 @@ import { menuItems } from '../data/landingData';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeTab, setActiveTab] = useState('#overview');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -12,8 +13,34 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = menuItems.map((item) => item.href.replace('#', ''));
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveTab(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, {
+      root: null,
+      rootMargin: '-20% 0px -50% 0px',
+      threshold: 0.1,
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (href) => {
     setIsOpen(false);
+    setActiveTab(href);
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -32,7 +59,10 @@ export default function Header() {
         <a
           href="#"
           className="flex shrink-0 items-center"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => {
+            setActiveTab('#overview');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         >
           <img
             src="/images/logo_kol_summit.png"
@@ -41,18 +71,25 @@ export default function Header() {
           />
         </a>
 
-        <div className="hidden xl:flex flex-1 items-center justify-end gap-8">
-          <nav className="flex items-center gap-7 px-0 py-0">
-            {menuItems.map((item) => (
-              <button
-                key={item.href}
-                type="button"
-                onClick={() => handleNavClick(item.href)}
-                className="flex items-center px-0 py-0 text-base font-medium leading-[1.45] tracking-[-0.005em] text-white/95 transition-opacity duration-200 hover:opacity-100 hover:text-white"
-              >
-                {item.label}
-              </button>
-            ))}
+        <div className="hidden xl:flex flex-1 items-center justify-end gap-6">
+          <nav className="flex items-center gap-2 px-0 py-0">
+            {menuItems.map((item) => {
+              const isActive = activeTab === item.href;
+              return (
+                <button
+                  key={item.href}
+                  type="button"
+                  onClick={() => handleNavClick(item.href)}
+                  className={`relative flex items-center px-4 py-2 text-base transition-all duration-300 rounded-full cursor-pointer ${
+                    isActive
+                      ? 'font-bold text-white bg-white/15 border border-white/25 shadow-[0_0_15px_rgba(214,94,238,0.5)] scale-[1.02]'
+                      : 'font-medium text-white/80 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </nav>
 
           <a
@@ -90,16 +127,23 @@ export default function Header() {
       >
         <div className="border-t border-white/5 bg-navy-950/95 backdrop-blur-xl px-4 py-3">
           <div className="space-y-1 rounded-2xl bg-white/5 p-2">
-            {menuItems.map((item) => (
-              <button
-                key={item.href}
-                type="button"
-                onClick={() => handleNavClick(item.href)}
-                className="block w-full rounded-xl px-4 py-3 text-left text-base font-medium leading-[1.45] tracking-[-0.005em] text-white/95 transition-colors hover:bg-white/10 hover:text-white"
-              >
-                {item.label}
-              </button>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = activeTab === item.href;
+              return (
+                <button
+                  key={item.href}
+                  type="button"
+                  onClick={() => handleNavClick(item.href)}
+                  className={`block w-full rounded-xl px-4 py-3 text-left text-base transition-all duration-200 ${
+                    isActive
+                      ? 'font-bold text-white bg-white/20 border border-white/25 shadow-[0_0_10px_rgba(214,94,238,0.4)]'
+                      : 'font-medium text-white/80 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
 
           <div className="pt-3">
