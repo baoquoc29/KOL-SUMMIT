@@ -65,8 +65,8 @@ export default function Schedule() {
       </style>
 
       {/* Background Triangles */}
-      <img src="/images/triangle_1.png" alt="" className="absolute top-10 left-10 w-[180px] h-auto pointer-events-none z-0 animate-float" />
-      <img src="/images/triangle_2.png" alt="" className="absolute bottom-10 right-10 w-[240px] h-auto pointer-events-none z-0 animate-float-delayed" />
+      <img src="/images/triangle_1.png" alt="" className="absolute top-10 left-0 w-[180px] h-auto pointer-events-none z-0 animate-float" />
+      <img src="/images/triangle_2.png" alt="" className="absolute bottom-10 right-0 w-[240px] h-auto pointer-events-none z-0 animate-float-delayed" />
 
       <div className="flex flex-col items-center gap-[50px] w-full max-w-[938px] relative z-10">
         {/* Title */}

@@ -2,10 +2,8 @@
 
 export default function Alliance() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-0 overflow-hidden m-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div 
           className="relative mx-auto flex items-center justify-center w-full max-w-[1142px]"
           style={{

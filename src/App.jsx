@@ -29,8 +29,16 @@ export default function App() {
         <Artists />
         <Schedule />
         <Speakers />
-        <TrustProgram />
-        <Alliance />
+        {/* Shared background section for TrustProgram and Alliance */}
+        <div className="relative w-full overflow-hidden">
+          <img 
+            src="/images/img_1.png" 
+            alt="Single Shared Background" 
+            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none z-0" 
+          />
+          <TrustProgram />
+          <Alliance />
+        </div>
         <Partners />
         <News />
       </main>
