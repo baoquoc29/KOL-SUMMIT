@@ -6,7 +6,7 @@ export default function SpeakerCard({ name, position, org, image }) {
   const bottomGradientHover = 'linear-gradient(180deg, rgba(22, 8, 78, 0) 0%, rgba(76, 166, 124, 0) 60.86%, #4CA67C 87.16%, #076531 100%)';
 
   return (
-    <div className="relative w-[290px] h-[400px] rounded-[20px] overflow-hidden group cursor-pointer transition-all duration-300">
+    <div className="relative w-[280px] sm:w-[290px] h-[400px] rounded-[20px] overflow-hidden group cursor-pointer transition-all duration-300 mx-auto">
       
       {/* Background Layer Base */}
       <div 

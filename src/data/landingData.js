@@ -17,7 +17,7 @@ export const successStatsBanner = 'https://lh3.googleusercontent.com/d/1mChR4EYW
 
 export const overviewBanner = 'https://lh3.googleusercontent.com/d/1vdaIQWFAxJGw9H9aWOEMZ_cjnlOxQxy4';
 
-export const heroArtworkVertical = 'https://lh3.googleusercontent.com/d/1hMCV6Z_LnJGtR3aTyuC4htT3liF_v90o';
+export const heroArtworkVertical = '/images/Banner/mobile.png';
 export const heroArtworkHorizontal = 'https://lh3.googleusercontent.com/d/1hOpanrne5QQHXA8U4Sv-WhVQa0dTgPka';
 
 export const attendeeStats = [
