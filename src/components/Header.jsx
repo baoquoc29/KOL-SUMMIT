@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { menuItems } from '../data/landingData';
 
@@ -6,44 +6,67 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState('#overview');
+  const isClickScrolling = useRef(false);
+  const clickTimer = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
 
-  useEffect(() => {
-    const sectionIds = menuItems.map((item) => item.href.replace('#', ''));
+      // Skip detection while smooth scrolling after a menu item click
+      if (isClickScrolling.current) return;
 
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveTab(`#${entry.target.id}`);
+      const sectionIds = menuItems.map((item) => item.href.replace('#', ''));
+      const headerOffset = 130; // Focal point line below header
+
+      let currentId = sectionIds[0];
+
+      // Find the last section whose top has passed the focal line
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= headerOffset) {
+            currentId = id;
+          }
         }
-      });
+      }
+
+      const newActive = `#${currentId}`;
+      setActiveTab((prev) => (prev !== newActive ? newActive : prev));
     };
 
-    const observer = new IntersectionObserver(handleIntersect, {
-      root: null,
-      rootMargin: '-20% 0px -50% 0px',
-      threshold: 0.1,
-    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (clickTimer.current) clearTimeout(clickTimer.current);
+    };
   }, []);
 
   const handleNavClick = (href) => {
     setIsOpen(false);
     setActiveTab(href);
+    isClickScrolling.current = true;
+
     const el = document.querySelector(href);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 90;
+      const elementPosition = el.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+
+      if (clickTimer.current) clearTimeout(clickTimer.current);
+      clickTimer.current = setTimeout(() => {
+        isClickScrolling.current = false;
+      }, 850);
+    } else {
+      isClickScrolling.current = false;
     }
   };
 
@@ -59,8 +82,9 @@ export default function Header() {
         <a
           href="#"
           className="flex shrink-0 items-center"
-          onClick={() => {
-            setActiveTab('#overview');
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('#overview');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
@@ -72,7 +96,7 @@ export default function Header() {
         </a>
 
         <div className="hidden xl:flex flex-1 items-center justify-end gap-6">
-          <nav className="flex items-center gap-2 px-0 py-0">
+          <nav className="flex items-center gap-1.5 px-0 py-0">
             {menuItems.map((item) => {
               const isActive = activeTab === item.href;
               return (
@@ -80,10 +104,10 @@ export default function Header() {
                   key={item.href}
                   type="button"
                   onClick={() => handleNavClick(item.href)}
-                  className={`relative flex items-center px-4 py-2 text-base transition-all duration-300 rounded-full cursor-pointer ${
+                  className={`relative flex items-center px-4 py-2 text-base transition-all duration-300 ease-out rounded-full cursor-pointer select-none ${
                     isActive
-                      ? 'font-bold text-white bg-white/15 border border-white/25 shadow-[0_0_15px_rgba(214,94,238,0.5)] scale-[1.02]'
-                      : 'font-medium text-white/80 hover:text-white hover:bg-white/10'
+                      ? 'font-semibold text-white bg-white/15 border border-white/25 shadow-[0_0_16px_rgba(214,94,238,0.45)] scale-[1.02]'
+                      : 'font-medium text-white/75 hover:text-white hover:bg-white/10 border border-transparent'
                   }`}
                 >
                   {item.label}
