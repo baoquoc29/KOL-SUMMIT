@@ -1,16 +1,20 @@
-export default function LogoPlaceholder({ label, size = 'md', className = '' }) {
+export default function LogoPlaceholder({ label, image, size = 'md', className = '' }) {
   const sizes = {
-    sm: 'w-16 h-10 md:w-20 md:h-12',
-    md: 'w-24 h-14 md:w-28 md:h-16',
-    lg: 'w-32 h-18 md:w-40 md:h-20',
-    xl: 'w-40 h-20 md:w-52 md:h-24',
+    sm: 'w-24 h-14 md:w-28 md:h-16',
+    md: 'w-32 h-16 md:w-36 md:h-20',
+    lg: 'w-44 h-20 md:w-52 md:h-24',
+    xl: 'w-52 h-24 md:w-60 md:h-28',
   };
 
   return (
     <div
-      className={`flex items-center justify-center rounded-lg border border-dashed border-white/20 bg-white/5 text-[10px] md:text-xs text-white/40 text-center p-2 hover:bg-white/10 hover:border-white/30 transition-all duration-300 ${sizes[size]} ${className}`}
+      className={`relative flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2 text-center text-sm md:text-base font-semibold text-white/90 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:bg-white/20 hover:border-white/40 hover:scale-105 hover:shadow-[0_0_20px_rgba(150,223,255,0.4)] transition-all duration-300 ${sizes[size]} ${className}`}
     >
-      {label}
+      {image ? (
+        <img src={image} alt={label || 'Logo'} className="max-w-full max-h-full object-contain" />
+      ) : (
+        <span className="leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">{label}</span>
+      )}
     </div>
   );
 }

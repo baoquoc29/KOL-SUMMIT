@@ -19,7 +19,7 @@ export default function MarkerSection() {
                     </h2>
 
                     <p className="mt-3 max-w-[1004px] text-base font-medium leading-[1.25] text-white drop-shadow-[0_0_5.2px_rgba(0,0,0,0.45)] sm:text-lg md:text-xl lg:text-[32px]">
-                        Diễn đàn quốc gia quy tụ toàn hệ sinh thái ảnh hưởng số nhằm cùng định hình và thúc đẩy các định hướng phát triển trong kỷ nguyên AI.
+                        Diễn đàn quốc gia quy tụ toàn hệ sinh thái ảnh hưởng số cùng định hình tương lai sáng tạo trong kỷ nguyên AI
                     </p>
                 </div>
             </div>

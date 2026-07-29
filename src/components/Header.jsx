@@ -115,21 +115,6 @@ export default function Header() {
               );
             })}
           </nav>
-
-          <a
-            href="#register"
-            className="group relative inline-flex h-[47px] items-center justify-center overflow-hidden rounded-[42px] bg-[linear-gradient(358deg,#D2DED5_-22.49%,#4CA67C_-3.93%,#076531_14.64%,#2D006C_43.14%,#2840DB_71.95%,#D65EEE_88.9%,#96DFFF_107.46%)] px-5 shadow-[0_0_8.9px_rgba(224,67,255,0.9),inset_0_-5px_4px_rgba(255,255,255,0.25)] transition-transform duration-300 hover:scale-[1.02]"
-          >
-            <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-white/15 blur-[1px]" />
-            <span className="relative flex items-center justify-center gap-1 text-white">
-              <span className="text-base font-bold uppercase leading-[1.45] tracking-[-0.005em] [text-shadow:0_0_7.7px_#076531]">
-                ĐĂNG KÝ NGAY
-              </span>
-              <span className="flex h-10 w-8 items-center justify-center">
-                <ArrowRight size={20} strokeWidth={2.4} />
-              </span>
-            </span>
-          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -168,23 +153,6 @@ export default function Header() {
                 </button>
               );
             })}
-          </div>
-
-          <div className="pt-3">
-            <a
-              href="#register"
-              className="relative inline-flex h-[47px] w-full items-center justify-center overflow-hidden rounded-[42px] bg-[linear-gradient(358deg,#D2DED5_-22.49%,#4CA67C_-3.93%,#076531_14.64%,#2D006C_43.14%,#2840DB_71.95%,#D65EEE_88.9%,#96DFFF_107.46%)] px-5 shadow-[0_0_8.9px_rgba(224,67,255,0.9),inset_0_-5px_4px_rgba(255,255,255,0.25)]"
-            >
-              <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-white/15 blur-[1px]" />
-              <span className="relative flex items-center justify-center gap-1 text-white">
-                <span className="text-base font-bold uppercase leading-[1.45] tracking-[-0.005em] [text-shadow:0_0_7.7px_#076531]">
-                  ĐĂNG KÝ NGAY
-                </span>
-                <span className="flex h-10 w-8 items-center justify-center">
-                  <ArrowRight size={20} strokeWidth={2.4} />
-                </span>
-              </span>
-            </a>
           </div>
         </div>
       </div>

@@ -17,6 +17,7 @@ export const successStatsBanner = 'https://lh3.googleusercontent.com/d/1mChR4EYW
 
 export const overviewBanner = 'https://lh3.googleusercontent.com/d/1vdaIQWFAxJGw9H9aWOEMZ_cjnlOxQxy4';
 
+export const heroVideo = '/images/Banner/VideoBanner.mp4';
 export const heroArtworkVertical = '/images/Banner/mobile.png';
 export const heroArtworkHorizontal = 'https://lh3.googleusercontent.com/d/1hOpanrne5QQHXA8U4Sv-WhVQa0dTgPka';
 
@@ -124,8 +125,8 @@ export const speakerTabs = [
 
 export const speakers = {
   tab1: [
-    { name: '', position: '', org: '', image: '' },
-    { name: '', position: '', org: '', image: '' },
+    { name: 'NSND – Tự Long', position: 'Nghệ sĩ Nhân dân', org: 'Nhà hát Kịch Quân đội', image: 'https://lh3.googleusercontent.com/d/1V2FLpVvwgYSQfBhGPKhDdkHlvmkZRffU' },
+    { name: 'Ca sĩ – Soobin', position: 'Ca sĩ / Nhà sản xuất', org: 'SpaceSpeakers Entertainment', image: 'https://lh3.googleusercontent.com/d/1frRSOMxCHi_aCYekouZ8iZ8PfLBEotLK' },
     { name: '', position: '', org: '', image: '' },
     { name: '', position: '', org: '', image: '' },
     { name: '', position: '', org: '', image: '' },

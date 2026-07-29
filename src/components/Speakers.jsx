@@ -95,17 +95,21 @@ export default function Speakers() {
         </h2>
 
         {/* Tabs - Swipeable horizontally on mobile */}
-        <div className="w-full max-w-full sm:max-w-[752px] overflow-x-auto overflow-y-hidden py-2 px-2 no-scrollbar touch-pan-x">
-          <div className="flex flex-row items-center justify-start sm:justify-center gap-2 sm:gap-[20px] min-w-max mx-auto">
+        <div className="w-full max-w-full sm:max-w-[820px] overflow-x-auto overflow-y-hidden py-3 px-2 no-scrollbar touch-pan-x">
+          <div className="flex flex-row items-center justify-start sm:justify-center gap-2 sm:gap-[16px] min-w-max mx-auto">
             {speakerTabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
                 onClick={() => handleTabChange(tab.id)}
-                className="flex flex-row justify-center items-center h-[46px] sm:h-[65px] px-5 sm:px-[30px] rounded-[25px] sm:rounded-[40px] transition-all duration-300 flex-shrink-0 cursor-pointer hover:scale-105"
+                className={`flex flex-row justify-center items-center h-[44px] sm:h-[54px] px-4 sm:px-[22px] rounded-[22px] sm:rounded-[36px] transition-all duration-300 flex-shrink-0 cursor-pointer ${
+                  activeTab === tab.id
+                    ? 'border-2 border-[#96DFFF] shadow-[0_0_18px_rgba(150,223,255,0.5)] scale-[1.02]'
+                    : 'border border-[#AFAFAF] hover:border-[#96DFFF] hover:shadow-[0_0_15px_rgba(150,223,255,0.4)] hover:scale-[1.02]'
+                }`}
                 style={activeTab === tab.id ? activeTabStyle : inactiveTabStyle}
               >
-                <span className={`text-[14px] sm:text-[22px] text-center whitespace-nowrap text-[#E1D6FF] ${activeTab === tab.id ? 'font-bold' : 'font-[450]'}`}>
+                <span className={`text-[13px] sm:text-[18px] md:text-[19px] text-center whitespace-nowrap text-[#E1D6FF] ${activeTab === tab.id ? 'font-bold' : 'font-[450]'}`}>
                   {tab.label}
                 </span>
               </button>

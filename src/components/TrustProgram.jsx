@@ -19,17 +19,24 @@ export default function TrustProgram() {
             className="relative flex flex-col items-center justify-center gap-[10px] w-full z-10 py-6"
             style={{ filter: 'drop-shadow(0px 0px 16.5px rgba(45, 0, 108, 0.4))' }}
           >
-            <p className="font-['SVN-Apparat'] font-[450] text-[32px] leading-[1.2] text-white text-center m-0">
+            <p 
+              className="font-['SVN-Apparat'] font-[450] text-[24px] md:text-[32px] leading-[1.2] text-white text-center m-0"
+              style={{
+                textShadow: '0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(214,94,238,0.6)',
+                WebkitTextStroke: '0.5px rgba(255,255,255,0.8)'
+              }}
+            >
               Chính thức khởi động chương trình
             </p>
             <h2
-              className="font-['SVN-Apparat'] font-bold text-[64px] leading-[1.2] text-center uppercase m-0"
+              className="font-['SVN-Apparat'] font-bold text-[38px] md:text-[64px] leading-[1.2] text-center uppercase m-0 px-2"
               style={{
                 background: 'linear-gradient(180deg, #FFFFFF 17.59%, #EFD5FF 85.45%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 textFillColor: 'transparent',
+                filter: 'drop-shadow(0px 0px 10px rgba(214, 94, 238, 0.8))'
               }}
             >
               TÍN NHIỆM NGƯỜI CÓ ẢNH HƯỞNG
@@ -39,10 +46,10 @@ export default function TrustProgram() {
       </div>
 
       {/* Main Content Container (Paragraph + 3 Hoạt động chính) */}
-      <div className="relative flex flex-col items-center w-full gap-10 z-10 py-6 pb-16 px-4 lg:px-8 overflow-hidden">
+      <div className="relative flex flex-col items-center w-full gap-8 z-10 py-6 pb-16 px-4 lg:px-8 overflow-hidden">
 
         <p
-          className="relative z-10 w-full max-w-[1142px] px-4 mx-auto flex items-center justify-center text-center text-[18px] md:text-[24px] text-white my-4 leading-relaxed"
+          className="relative z-10 w-full max-w-[1142px] px-4 mx-auto flex items-center justify-center text-center text-[16px] md:text-[20px] text-white my-2 leading-relaxed"
           style={{
             fontFamily: "'SVN-Apparat', sans-serif",
             fontWeight: 450,
@@ -54,7 +61,7 @@ export default function TrustProgram() {
 
         {/* Header 3 Hoạt động chính */}
         <h3
-          className="relative z-10 text-[40px] md:text-[64px] font-bold text-center uppercase tracking-[-0.06em] leading-[1.2] mb-6 md:mb-10 px-2"
+          className="relative z-10 text-[32px] md:text-[48px] font-bold text-center uppercase tracking-[-0.04em] leading-[1.2] mb-4 md:mb-6 px-2"
           style={{
             fontFamily: "'SVN-Apparat', sans-serif",
             background: 'linear-gradient(180deg, #FFFFFF 17.59%, #EFD5FF 85.45%)',
@@ -68,19 +75,18 @@ export default function TrustProgram() {
         </h3>
 
         {/* Cards container */}
-        <div className="relative z-10 flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-[40px] w-full">
+        <div className="relative z-10 flex flex-col lg:flex-row justify-center items-center lg:items-stretch gap-8 lg:gap-[30px] w-full max-w-[1142px]">
           {trustProgramCards.map((card, index) => (
             <div
               key={index}
-              className="relative flex-shrink-0 hover:-translate-y-1 transition-all duration-300 w-full max-w-[354px]"
+              className="relative flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 w-full max-w-[360px] min-h-[410px] p-[25px] pb-[90px]"
               style={{
-                height: '392px',
                 background: 'linear-gradient(184.05deg, rgba(232, 223, 248, 0) 83.76%, rgba(170, 118, 234, 0.4) 120.64%, rgba(144, 101, 214, 0.7) 155.28%, #6B57A6 188.8%, #39504B 226.79%), radial-gradient(88.41% 116.31% at 46.39% 20.86%, #F1F1F1 27%, #E7B7F8 56%, #9F42E1 80.5%, #5A1798 100%), #FFFFFF',
                 border: '1px solid #595959',
                 borderRadius: '30px'
               }}
             >
-              <div className="flex flex-col items-start gap-[20px] absolute left-[25px] right-[25px] top-[30px]">
+              <div className="flex flex-col items-start gap-[16px] w-full">
                 {/* Icon (Vector) */}
                 <div className="flex flex-row items-center h-[37px]">
                   <img src="/images/green_logo.png" alt="Logo" className="h-[37px] w-auto object-contain" />
@@ -88,7 +94,7 @@ export default function TrustProgram() {
 
                 {/* Title */}
                 <h4
-                  className="font-bold text-[18px] md:text-[20px] leading-[1.2] uppercase text-[#2D006C] m-0 text-left"
+                  className="font-bold text-[18px] md:text-[20px] leading-[1.25] uppercase text-[#2D006C] m-0 text-left"
                   style={{ fontFamily: "'SVN-Apparat', sans-serif" }}
                 >
                   {card.title}
@@ -96,8 +102,8 @@ export default function TrustProgram() {
 
                 {/* Description */}
                 <p
-                  className="font-normal text-[15px] md:text-[16px] leading-[1.2] text-[#2D006C] m-0 text-left"
-                  style={{ fontFamily: "'Roobert TRIAL', sans-serif" }}
+                  className="font-medium text-[15px] md:text-[16px] leading-[1.4] text-[#2D006C] m-0 text-left"
+                  style={{ fontFamily: "'SVN-Apparat', sans-serif" }}
                 >
                   {card.description}
                 </p>
@@ -107,19 +113,19 @@ export default function TrustProgram() {
               <div
                 className="absolute flex flex-row justify-center items-center cursor-pointer hover:opacity-90 transition-opacity overflow-hidden"
                 style={{
-                  height: '51px',
+                  height: '52px',
                   left: '25px',
                   right: '25px',
-                  bottom: '29px',
+                  bottom: '25px',
                   background: 'radial-gradient(100% 100% at 50% 100%, #0C6DFF 0%, rgba(12, 109, 255, 0) 100%), linear-gradient(180deg, #261187 0%, #2D0097 100%)',
                   boxShadow: '0px 0px 23.3px rgba(241, 51, 255, 0.84), inset 0px -3px 4px rgba(255, 255, 255, 0.51)',
                   borderRadius: '40px'
                 }}
               >
                 <span
-                  className="font-semibold text-[14px] md:text-[16px] leading-[1.2] text-center whitespace-nowrap overflow-hidden text-ellipsis px-2"
+                  className="font-bold text-[16px] md:text-[18px] leading-[1.2] text-center whitespace-nowrap overflow-hidden text-ellipsis px-2"
                   style={{
-                    fontFamily: "'SF Pro Display', sans-serif",
+                    fontFamily: "'SVN-Apparat', sans-serif",
                     background: 'linear-gradient(180deg, #FFFFFF 17.59%, #EFD5FF 85.45%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',

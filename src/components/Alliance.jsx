@@ -2,7 +2,7 @@
 
 export default function Alliance() {
   return (
-    <section className="relative py-0 overflow-hidden m-0">
+    <section className="relative pt-12 md:pt-20 pb-16 overflow-hidden m-0">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div 
           className="relative mx-auto flex items-center justify-center w-full max-w-[1142px]"
@@ -62,10 +62,10 @@ export default function Alliance() {
                 </div>
                 {/* Text */}
                 <p 
-                  className="font-medium text-[20px] md:text-[24px] leading-[1.2] text-white m-0"
+                  className="font-medium text-[20px] md:text-[24px] leading-[1.25] text-white m-0"
                   style={{ fontFamily: "'SVN-Apparat', sans-serif" }}
                 >
-                  Đơn vị Tổ chức KOL Summit và Chương trình Tín nhiệm Người có ảnh hưởng
+                  Đơn vị Tổ chức KOL Summit và<br className="hidden sm:block" /> Chương trình Tín nhiệm Người có ảnh hưởng
                 </p>
               </div>
 
@@ -81,7 +81,10 @@ export default function Alliance() {
               <div className="flex flex-col sm:flex-row flex-wrap justify-start items-center p-0 gap-4 sm:gap-[20px] w-full max-w-[614px]">
                 
                 {/* Button 1: Tím */}
-                <button 
+                <a 
+                  href="https://niemtinso.vn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative flex flex-row justify-center items-center py-0 px-[5px] w-full sm:w-auto h-[52px] cursor-pointer hover:opacity-90 transition-opacity flex-grow"
                   style={{
                     background: 'radial-gradient(100% 100% at 50% 100%, #0C6DFF 0%, rgba(12, 109, 255, 0) 100%), linear-gradient(180deg, #261187 0%, #2D0097 100%)',
@@ -112,10 +115,13 @@ export default function Alliance() {
                       </linearGradient>
                     </defs>
                   </svg>
-                </button>
+                </a>
 
                 {/* Button 2: Trắng bạc */}
-                <button 
+                <a 
+                  href="https://niemtinso.vn/dang-ky"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative flex flex-row justify-center items-center py-0 px-[5px] w-full sm:w-auto h-[52px] cursor-pointer hover:opacity-90 transition-opacity flex-grow"
                   style={{
                     background: 'linear-gradient(360deg, #6E6CDF 0%, #FFFFFF 77.42%)',
@@ -146,7 +152,7 @@ export default function Alliance() {
                       </linearGradient>
                     </defs>
                   </svg>
-                </button>
+                </a>
 
               </div>
             </div>
@@ -204,10 +210,10 @@ export default function Alliance() {
                   <div className="flex flex-col items-start p-0 gap-[5px] flex-grow">
                     <span className="font-bold text-[48px] leading-[1.2] text-white font-sans">150+</span>
                     <span 
-                      className="font-[450] text-[16px] md:text-[18px] leading-[1.2] text-white w-full"
+                      className="font-[450] text-[16px] md:text-[18px] leading-[1.25] text-white w-full"
                       style={{ fontFamily: "'SVN-Apparat', sans-serif" }}
                     >
-                      Nghệ sĩ, KOL, nhà sáng tạo nội dung và chuyên gia có ảnh hưởng
+                      Nghệ sĩ, KOL, nhà sáng tạo nội dung và chuyên gia có&nbsp;ảnh&nbsp;hưởng
                     </span>
                   </div>
                 </div>

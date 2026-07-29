@@ -161,7 +161,7 @@ export default function Schedule() {
             
             {/* 8:00 - 11:00 */}
             <div className="flex flex-col gap-[10px] w-full">
-              <h3 className="text-[24px] uppercase leading-none font-sans" style={textGradientMain}>8:00 - 11:00</h3>
+              <h3 className="text-[24px] font-bold uppercase leading-none font-sans" style={textGradientMain}>8:00 - 11:00</h3>
               <div className="flex flex-row gap-[20px] w-full">
                 <div className="flex flex-col justify-center items-center gap-[10px] w-[432px] h-[95px]" style={glassBoxStyle}>
                   <div className="flex flex-col items-center">
@@ -180,7 +180,7 @@ export default function Schedule() {
 
             {/* 13:30 - 14:00 */}
             <div className="flex flex-col gap-[10px] w-full">
-              <h3 className="text-[24px] uppercase leading-none font-sans" style={textGradientMain}>13:30 - 14:00</h3>
+              <h3 className="text-[24px] font-bold uppercase leading-none font-sans" style={textGradientMain}>13:30 - 14:00</h3>
               <div className="flex flex-col justify-center items-center w-full h-[80px]" style={glassBoxStyle}>
                 <h4 className="text-[24px] font-bold text-[rgba(29,1,50,0.88)] uppercase leading-[1.2]">
                   thảm đỏ đón tiếp khách mời & vip expo tour
@@ -190,7 +190,7 @@ export default function Schedule() {
 
             {/* 14:00 - 17:30 */}
             <div className="flex flex-col gap-[10px] w-full">
-              <h3 className="text-[24px] uppercase leading-none font-sans" style={textGradientMain}>14:00 - 17:30</h3>
+              <h3 className="text-[24px] font-bold uppercase leading-none font-sans" style={textGradientMain}>14:00 - 17:30</h3>
               <div className="flex flex-col justify-center items-center gap-1 w-full h-[80px]" style={glassBoxStyle}>
                 <h4 className="text-[24px] font-bold text-[#1D0132] uppercase leading-[1.2]">hội nghị toàn thể</h4>
                 <p className="text-[20px] font-sans text-[#1D0132] leading-[1.2]">Chủ đề: KOL với hành trình kiến tạo niềm tin số</p>
@@ -199,7 +199,7 @@ export default function Schedule() {
 
             {/* 18:30 - 21:00 */}
             <div className="flex flex-col gap-[10px] w-full">
-              <h3 className="text-[24px] uppercase leading-none font-sans" style={textGradientMain}>18:30 - 21:00</h3>
+              <h3 className="text-[24px] font-bold uppercase leading-none font-sans" style={textGradientMain}>18:30 - 21:00</h3>
               <div className="flex flex-col justify-center items-center w-full h-[80px]" style={glassBoxStyle}>
                 <h4 className="text-[24px] font-bold text-[#1D0132] uppercase leading-[1.2]">tiệc tối networking</h4>
               </div>
@@ -207,7 +207,7 @@ export default function Schedule() {
 
             {/* Hoạt động xuyên suốt */}
             <div className="flex flex-col gap-[10px] w-full">
-              <h3 className="text-[28px] font-bold uppercase leading-none" style={textGradientMain}>
+              <h3 className="text-[28px] font-bold uppercase leading-snug py-1" style={textGradientMain}>
                 Hoạt động xuyên suốt sự kiện
               </h3>
               <div className="flex flex-row items-stretch gap-[20px] w-full h-[111px]">
@@ -243,18 +243,6 @@ export default function Schedule() {
               }}
             >
               <span className="text-[20px] lg:text-[24px] font-medium uppercase text-center whitespace-nowrap" style={textGradientDark}>điểm nhấn hội thảo</span>
-            </button>
-
-            <button 
-              className="flex items-center justify-center h-[65px] px-[20px] rounded-[40px] hover:scale-105 transition-transform w-full max-w-[320px] lg:w-[298px]"
-              style={{
-                background: 'linear-gradient(359.06deg, #D2DED5 -19.18%, #4CA67C -2.28%, #076531 14.63%, #2D006C 48.44%, #2840DB 65.34%, #D65EEE 82.25%, #96DFFF 99.15%), #3E00CE',
-                boxShadow: btnShadow,
-              }}
-            >
-              <span className="text-[20px] lg:text-[24px] font-bold uppercase text-center whitespace-nowrap" style={textGradientMain}>
-                đăng ký tham dự
-              </span>
             </button>
 
             <button 
