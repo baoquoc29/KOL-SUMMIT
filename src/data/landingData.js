@@ -54,14 +54,7 @@ export const artists = [
     figmaBackground: 'linear-gradient(0deg, #D2DED5 -52.22%, #4CA67C -23.11%, #076531 6%, #00121F 52.75%, #2D006C 64.21%, #2840DB 93.31%, #D65EEE 122.42%, #96DFFF 151.52%), #3E00CE',
     imageStyle: { width: '233px', height: '243px', x: -7, y: 0, scale: 1 }
   },
-  { 
-    name: 'Ca sĩ – Soobin', 
-    role: 'Ca sĩ', 
-    gradient: 'from-blue-600 to-cyan-500', 
-    image: 'https://lh3.googleusercontent.com/d/1frRSOMxCHi_aCYekouZ8iZ8PfLBEotLK',
-    figmaBackground: 'linear-gradient(0deg, #D2DED5 -183.01%, #4CA67C -135.23%, #076531 -87.45%, #00121F -10.71%, #2D006C 8.1%, #2840DB 55.87%, #D65EEE 103.65%, #96DFFF 151.42%), #3E00CE',
-    imageStyle: { width: '261px', height: '235px', x: 0, y: 0, scale: 1 }
-  },
+  { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
   { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
   { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
   { name: '', role: '', image: '', imageStyle: { width: '233px', height: '243px', x: 'center', y: 0, scale: 1 } },
