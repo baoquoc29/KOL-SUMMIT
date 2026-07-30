@@ -9,13 +9,14 @@ export default function Hero() {
       {/* Video Banner Container - Full Width */}
       <div className="w-full select-none">
         <video
-          src={heroVideo}
           autoPlay
           loop
           muted
+          defaultMuted
           playsInline
           className="w-full h-auto block object-cover"
         >
+          <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
